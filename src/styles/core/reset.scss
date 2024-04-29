@@ -1,36 +1,37 @@
-@import 'variables';
-
+@import "variables";
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  background-color: $color-background-800;
+  color: $color-white;
 
-  }
+  -webkit-font-smoothing: antialiased;
+}
+body,
+input,
+button,
+textarea {
+  font-family: $font-primary;
+  font-size: 1rem;
+  outline: none;
+}
 
-  body{
-    background-color: $color-background-800;
-    color: $color-white;
-    
-    -webkit-font-smoothing: antialiased;
-  }
-  body, input, button, textarea {
-    font-family: $font-primary;
-    font-size: 1rem;
-    outline: none;
-  }
+a {
+  text-decoration: none;
+}
 
-  a {
-    text-decoration: none;
-  }
+button,
+a {
+  cursor: pointer;
+  transition: filter 0.2s;
+}
 
-  button, a {
-    cursor: pointer;
-    transition: filter 0.2s;
-  }
-
-  button:hover, a:hover {
-    filter: brightness(0.9);
-  }
+button:hover,
+a:hover {
+  filter: brightness(0.9);
+}

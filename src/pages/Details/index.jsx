@@ -1,14 +1,18 @@
 import "../../styles/App.scss";
-import { Button } from "../../components/button";
+import { Header } from "../../components/Header";
+import { Button } from "../../components/Button";
 
 export function Details() {
   return (
     <>
-      <h1 className="title">Hello Word</h1>
-    
-      <Button title="Login" loading />
-      <Button title="Cadastrar" />
+
+    <div className="container">
+   
+      <Header />
       <Button title="Volver" />
+     
+
+      </div>
     </>
   );
 }

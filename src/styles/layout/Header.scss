@@ -1,0 +1,68 @@
+.create {
+  grid-area: header;
+  height: 105px;
+  width: 100%;
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: $color-background-700;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 80px;
+ 
+
+  &__button {
+    width: 100%;
+    background-color: $color-orange;
+    color: $color-background-800;
+
+    height: 56px;
+    border: 0;
+    padding: 0 16px;
+    margin-top: 16px;
+    border-radius: 10px;
+    font-weight: 500;
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+  &__profile {
+    display: flex;
+    align-items: center;
+  
+  }
+  &__img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+  }
+  &__name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    line-height: 24px;
+  }
+  &__span{
+    font-size: 14px;
+    color: $color-gray-100;
+
+  }
+  &__strong{
+    font-size: 18px;
+    color: $color-white;
+  }
+ 
+}
+.logout{
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  border: none;
+  background: none;
+  color:$color-gray-100;
+  font-size: 36px;
+  
+}
