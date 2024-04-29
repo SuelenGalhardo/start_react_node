@@ -5,7 +5,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: 62.5%;
+  
 
 
   }
@@ -13,6 +13,13 @@
   body{
     background-color: $color-background-800;
     color: $color-white;
+    
+    -webkit-font-smoothing: antialiased;
+  }
+  body, input, button, textarea {
+    font-family: $font-primary;
+    font-size: 1rem;
+    outline: none;
   }
 
   a {
