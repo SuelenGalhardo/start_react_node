@@ -1,0 +1,14 @@
+.section{
+margin:  28px 0;
+
+    &__title{
+border-bottom-width:1px ;
+border-bottom-style: solid;
+border-bottom-color: $color-background-700;
+padding-bottom: 16px;
+margin-bottom: 28px;
+color: $color-gray-100;
+font-size: 20px;
+font-weight: 400;
+    }
+}

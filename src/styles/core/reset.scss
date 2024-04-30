@@ -35,3 +35,15 @@ button:hover,
 a:hover {
   filter: brightness(0.9);
 }
+
+.links {
+  list-style: none;
+}
+.links,
+li {
+  margin-top: 12px;
+}
+.links,
+a {
+  color: $color-white;
+}
