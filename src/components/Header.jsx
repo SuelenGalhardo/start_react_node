@@ -21,8 +21,8 @@ export function Header(){
       
         <div className='logout'>
             <RiShutDownLine/>
-        </div>
-        </header>
+       </div>
+       </header>
 
 );
 }

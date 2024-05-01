@@ -1,9 +1,10 @@
 import "../../styles/App.scss";
-import { Header } from "../../components/Header";
-import { Button } from "../../components/Button";
-import { Section } from "../../components/Section";
-import { ButtonText } from "../../components/ButtonText";
-import { Tag } from "../../components/Tag";
+import "../../styles/layout/Details.scss"
+import { Header } from "./Header";
+import { Button } from "./Button";
+import { Section } from "./Section";
+import { ButtonText } from "./ButtonText";
+import { Tag } from "./Tag";
 
 export function Details() {
   return (
@@ -11,10 +12,10 @@ export function Details() {
       <div className="container">
         <Header />
         <main>
-          <div className="content">
+          <div className="contentOne">
             <ButtonText title="Excluir nota" />
-            <h1 className="content__title">Introduction in react</h1>
-            <p className="content__text">Lorem ipsum dolor sit amet consectetur 
+            <h1 className="contentOne__title">Introduction in react</h1>
+            <p className="contentOne__text">Lorem ipsum dolor sit amet consectetur 
               adipisicing elit. Iste sed deleniti ipsa 
               recusandae autem pariatur quaerat magnam, 
               quod consectetur sint, optio ratione, 

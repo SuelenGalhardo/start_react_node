@@ -1,0 +1,43 @@
+.home {
+  width: 100%;
+  height: 100vh;
+
+  display: grid;
+
+  grid-template-areas:
+  "brand header"
+  "menu search"
+  "menu content"
+  "note content";
+
+  background-color: #312e38;
+
+  &__brand {
+    grid-area: brand;
+
+    background-color: darkgoldenrod;
+  }
+
+  &__menu {
+    grid-area: menu;
+background-color: antiquewhite;
+  }
+  &__search {
+    grid-area: search;
+ background-color: aquamarine;
+  }
+  &__content {
+    grid-area: content;
+    background-color: blueviolet;
+  
+  }
+  &__note {
+    grid-area: note;
+    background-color: chartreuse;
+ 
+  }
+
+
+}
+
+ 

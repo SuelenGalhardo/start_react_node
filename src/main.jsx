@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./styles/App.scss"
-import { Details } from "./pages/Details";
+import "./styles/App.scss";
+import { Home } from "../src/components/Home";
 
 
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Details />
+    <Home />
   </React.StrictMode>
 );
