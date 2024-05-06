@@ -1,6 +1,6 @@
-export function Tag({title}) {
+export function Tag({title, ...rest }) {
     return(
-<span className="tag">{title}</span>
+<span className="tag" {...rest}>{title}</span>
 
     );
 }

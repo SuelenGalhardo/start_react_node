@@ -47,7 +47,8 @@ color: #ff9000;
   }
   &__content {
     grid-area: content;
-    background-color: blueviolet;
+    padding: 0 64px;
+    overflow-y: auto;
   
   }
 

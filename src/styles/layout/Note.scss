@@ -1,0 +1,22 @@
+.noteOne{
+    width: 100%;
+    background-color: $color-background-700; 
+  
+    border: none;
+    border-radius: 10px;
+  
+    padding: 22px;
+    margin-bottom: 16px;
+}
+.noteOne h1{
+    flex: 1;
+    text-align: left;
+    font-weight: 700;
+    font-size: 24px;
+    color: $color-white;
+}
+footer{
+    width: 100%;
+    display: flex;
+    margin-top: 24px;
+}
