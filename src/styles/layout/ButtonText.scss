@@ -1,6 +1,13 @@
-.buttonText{
-    background: none;
-    color: $color-orange;
-    border: none;
-    font-size: 16px;
+.buttonText {
+  background: none;
+  color: $color-orange;
+  border: none;
+  font-size: 16px;
+}
+.active {
+  color: #ff9000;
+}
+
+.inactive {
+  color: #999591;
 }

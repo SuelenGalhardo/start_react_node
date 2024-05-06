@@ -19,6 +19,7 @@ textarea {
   font-family: $font-primary;
   font-size: 1rem;
   outline: none;
+  text-decoration: none;
 }
 
 a {
@@ -42,6 +43,7 @@ a:hover {
 .links,
 li {
   margin-top: 12px;
+  list-style: none;
 }
 .links,
 a {
