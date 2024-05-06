@@ -1,9 +1,10 @@
 
-import{ FiPlus } from 'react-icons/fi';
-
+import{ FiPlus, FiSearch } from 'react-icons/fi';
+import "../styles/layout/Home.scss";
 import "../styles/App.scss";
-import { Header } from "./Header";
+import { Header } from "../components/Header";
 import { ButtonText } from "../components/ButtonText";
+import { Input } from '../components/Input';
 
 export function Home() {
   return (
@@ -13,6 +14,7 @@ export function Home() {
       </div>
       <Header></Header>
       <div className="home__menu">
+      <ul >
         <li>
         
           <ButtonText 
@@ -27,8 +29,11 @@ export function Home() {
         <li>
           <ButtonText title="Node" />
         </li>
+      </ul>
       </div>
-      <div className="home__search"></div>
+      <div className="home__search">
+        <Input placeholder="pesquisar pelo titutlo "  icon={FiSearch}/>
+      </div>
       <div className="home__content"></div>
    
    

@@ -1,17 +1,17 @@
 import "../../styles/App.scss";
 import "../../styles/layout/Details.scss"
-import { Header } from "./Header";
-import { Button } from "./Button";
-import { Section } from "./Section";
-import { ButtonText } from "./ButtonText";
-import { Tag } from "./Tag";
+import { Header } from "../components/Header";
+import { Button } from "../components/Button";
+import { Section } from "../components/Section";
+import { ButtonText } from "../components/ButtonText";
+import { Tag } from "../components/Tag";
 
 export function Details() {
   return (
     <>
       <div className="container">
         <Header />
-        <main>
+        <main className="mainContainer">
           <div className="contentOne">
             <ButtonText title="Excluir nota" />
             <h1 className="contentOne__title">Introduction in react</h1>

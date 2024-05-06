@@ -1,0 +1,27 @@
+.inputOne {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: $color-background-900;
+  margin-bottom: 8px;
+  border-radius: 10px;
+ 
+}
+
+.inputOne input {
+  height: 56px;
+  width: 100%;
+  padding: 12px;
+  color: $color-white;
+  background: transparent;
+  border: 0;
+}
+
+.inputOne input::placeholder {
+  color: $color-gray-300;
+
+}
+
+.inputOne svg {
+  margin-left: 16px;
+}

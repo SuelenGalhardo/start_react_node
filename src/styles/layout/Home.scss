@@ -36,11 +36,14 @@ color: #ff9000;
     text-align: center;
     padding-top: 64px;
     
+    
   
   }
+
   &__search {
     grid-area: search;
- background-color: aquamarine;
+    padding: 64px 64px 0;
+
   }
   &__content {
     grid-area: content;
@@ -50,7 +53,6 @@ color: #ff9000;
 
   &__ButtonNote{
     grid-area: note;
-
 
     display: flex;
     align-items: center;
@@ -65,8 +67,10 @@ color: #ff9000;
 
 
 }
-
-svg{
+.home__menu li{
+  margin-bottom: 24px;
+}
+.home__ButtonNote svg{
 
   margin-right: 8px;
   background-color: #ff9000 ;
