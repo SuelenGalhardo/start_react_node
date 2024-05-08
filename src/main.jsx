@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/App.scss";
-import { Home } from "../src/pages/Home";
+import { SignUp } from "../src/pages/SignUp";
 
 
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Home />
+    <SignUp />
   </React.StrictMode>
 );

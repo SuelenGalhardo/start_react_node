@@ -1,0 +1,40 @@
+.signIn {
+  height: 100vh;
+  display: flex;
+
+  align-items: stretch;
+
+  &__title {
+    font-size: 48px;
+
+    color: #ff9000;
+  }
+  &__form {
+    padding: 0 136px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+  }
+  &__paragraph {
+    font-size: 14px;
+    color: #999591;
+  }
+
+  &__titleTwo {
+    font-size: 24px;
+   margin: 48px 0;
+  }
+
+  &__createCont {
+    margin-top: 124px;
+    color: #ff9000;
+  }
+  &__imageback {
+    flex: 1;
+    background: url(../../assets/signInImg.png) no-repeat center center;
+    background-size: cover;
+  }
+}
