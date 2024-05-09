@@ -9,6 +9,7 @@ import { Note } from "../components/Note";
 
 export function Home() {
   return (
+    <>
     <div className="home">
       <div className="home__brand">
         <h1 className="home__titleh1">RocketNotes</h1>
@@ -48,5 +49,6 @@ export function Home() {
         <FiPlus /> Crear Nota
       </button>
     </div>
+    </>
   );
 }

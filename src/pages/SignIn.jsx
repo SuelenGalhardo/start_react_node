@@ -6,6 +6,7 @@ import { FiMail, FiLock } from "react-icons/fi";
 
 export function SignIn() {
   return (
+    <>
     <div className="signIn">
       <form className="signIn__form">
         <h1 className="signIn__title">Rocket Notes </h1>
@@ -28,5 +29,6 @@ export function SignIn() {
 
       </div>
     </div>
+    </>
   );
 }
