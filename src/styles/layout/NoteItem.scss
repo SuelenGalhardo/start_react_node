@@ -1,0 +1,39 @@
+.noteItem{
+   
+    display: flex;
+    align-items: center;
+    background-color:#232129;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    padding-right: 16px;
+    &.isNew {
+        background-color: transparent;
+        border: 1px dashed #ccc;
+    }
+
+    &__inputItem{
+        height: 56px;
+        width: 100%;
+    
+        padding: 12px;
+    
+        color: $color-white;
+        background: transparent;
+    
+        border: none;
+        ::placeholder { color: $color-white;}
+    }
+  
+}
+
+.noteItem button{
+    border: none;
+    background: none;
+}
+
+.button-delete{
+    color: $color-red;
+}
+.button-add {
+    color: $color-orange;
+}

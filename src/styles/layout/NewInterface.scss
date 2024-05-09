@@ -1,3 +1,4 @@
+
 .newInterface {
   width: 100%;
   height: 100vh;
@@ -7,6 +8,17 @@
   grid-template-areas:
     "header"
     "content";
+
+  &__mainNew{
+    grid-area: content;
+    overflow-y: auto ;
+  }
+  &__tagNew{
+    display: flex;
+    justify-content: space-between;
+        
+    flex-wrap: wrap;
+  }
   &__formNew {
     max-width: 550px;
     margin: 38px auto;
