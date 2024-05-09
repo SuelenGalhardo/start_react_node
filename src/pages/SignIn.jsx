@@ -1,5 +1,6 @@
 import "../styles/App.scss";
 import "../styles/layout/SignIn.scss";
+import { Link } from "react-router-dom";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { FiMail, FiLock } from "react-icons/fi";
@@ -20,9 +21,9 @@ export function SignIn() {
         <Input placeholder="password" type="text" icon={FiLock} />
 
         <Button title="Entrar" />
-        <a className="signIn__createCont" href="#">
+        <Link to="/register" className="signIn__createCont">
           Criar conta
-        </a>
+        </Link>
       </form>
 
       <div className="signIn__imageback">

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 import {RiShutDownLine} from 'react-icons/ri'
 export function Header(){
@@ -5,7 +6,7 @@ export function Header(){
     return(
         
     <header className= "create">
-      <div className="create__profile">
+      <Link to="/profile" className="create__profile">
         <img className="create__img"
           src="https://github.com/suelengalhardo.png"
           alt="Foto do usuário"/>
@@ -17,7 +18,7 @@ export function Header(){
         
         </div>
       
-        </div>
+        </Link>
       
         <div className='logout'>
             <RiShutDownLine/>

@@ -1,5 +1,6 @@
 import "../styles/App.scss";
 import "../styles/layout/SignUp.scss";
+import { Link } from "react-router-dom";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { FiMail, FiLock, FiUser } from "react-icons/fi";
@@ -23,9 +24,9 @@ export function SignUp() {
         <Input placeholder="password" type="text" icon={FiLock} />
 
         <Button title="Registrar" />
-        <a className="SignUp__createCont" href="#">
+        <Link to="/"  className="SignUp__createCont">
         Volver a iniciar sesión
-        </a>
+        </Link>
       </form>
     </div>
      </>

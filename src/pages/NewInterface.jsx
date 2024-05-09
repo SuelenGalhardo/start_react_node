@@ -1,4 +1,6 @@
 import "../styles/App.scss";
+import { Link } from "react-router-dom";
+
 import "../styles/layout/NewInterface.scss";
 import { Header } from "../components/Header";
 import { Input } from "../components/Input.jsx";
@@ -6,6 +8,7 @@ import { TextArea } from "../components/TextArea.jsx";
 import { NoteItem } from "../components/NoteItem.jsx";
 import { Section } from "../components/Section.jsx";
 import { Button } from "../components/Button.jsx";
+
 
 
 
@@ -20,7 +23,7 @@ export function NewInterface() {
           <form className="newInterface__formNew">
             <header className="newInterface__headerNew">
               <h1>Crear nota</h1>
-              <a href="/">Volver</a>
+              <Link to="/">Volver</Link>
             </header>
             <Input placeholder="Titulo" />
 
