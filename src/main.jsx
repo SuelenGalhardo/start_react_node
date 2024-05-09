@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/App.scss";
-import { Profile } from "../src/pages/Profile";
+import { NewInterface } from "../src/pages/NewInterface";
 
 
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Profile />
+    <NewInterface />
   </React.StrictMode>
 );

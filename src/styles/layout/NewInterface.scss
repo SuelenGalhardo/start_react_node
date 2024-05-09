@@ -1,0 +1,31 @@
+.newInterface{
+ width: 100%;
+ height: 100vh; 
+ 
+ display: grid;
+ grid-template-rows: 105px auto;
+ grid-template-areas:
+ "header"
+ "content",
+ ;
+ &__formNew{
+    max-width: 550px;
+    margin: 38px auto;
+
+ }
+
+
+ &__headerNew{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+
+
+ }
+
+}
+.newInterface__headerNew a {
+    font-size: 20px;
+    color: #999591;
+}
