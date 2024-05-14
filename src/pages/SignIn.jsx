@@ -1,11 +1,23 @@
 import "../styles/App.scss";
 import "../styles/layout/SignIn.scss";
+
+
+
+import { useAuth } from '../hooks/auth';
 import { Link } from "react-router-dom";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 import { FiMail, FiLock } from "react-icons/fi";
 
+
+
 export function SignIn() {
+
+  const data = useAuth(); //hooks que foi criado no auth.js
+  console.log("meu contexto => ", data);
+
+
+
   return (
     <>
     <div className="signIn">
