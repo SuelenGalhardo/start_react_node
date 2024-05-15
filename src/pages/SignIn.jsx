@@ -1,6 +1,6 @@
 import "../styles/App.scss";
 import "../styles/layout/SignIn.scss";
-
+import { useState } from "react";
 
 
 import { useAuth } from '../hooks/auth';
@@ -12,10 +12,14 @@ import { FiMail, FiLock } from "react-icons/fi";
 
 
 export function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const data = useAuth(); //hooks que foi criado no auth.js
-  console.log("meu contexto => ", data);
 
+  const { signIn } = useAuth(); 
+function handleSignIn() {
+  signIn({email, password })
+}
 
 
   return (
@@ -29,10 +33,10 @@ export function SignIn() {
 
         <h2 className="signIn__titleTwo"> Inicie sesión </h2>
 
-        <Input placeholder="E-mail" type="text" icon={FiMail} />
-        <Input placeholder="password" type="text" icon={FiLock} />
+        <Input placeholder="E-mail" type="text" icon={FiMail} onChange={e => setEmail(e.target.value)} />
+        <Input placeholder="password" type="text" icon={FiLock} onChange={e => setPassword(e.target.value)} />
 
-        <Button title="Entrar" />
+        <Button title="Entrar" onClick={handleSignIn} />
         <Link to="/register" className="signIn__createCont">
           Criar conta
         </Link>
