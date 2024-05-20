@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../hooks/auth";
 
 import {RiShutDownLine} from 'react-icons/ri'
 export function Header(){
+
+  const { signOut } = useAuth();
 
     return(
         
@@ -19,8 +22,8 @@ export function Header(){
         </div>
       
         </Link>
-      
-        <div className='logout'>
+    
+        <div className='logout' onClick={signOut}>
             <RiShutDownLine/>
        </div>
        </header>
