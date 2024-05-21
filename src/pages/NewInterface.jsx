@@ -1,4 +1,5 @@
 import "../styles/App.scss";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/layout/NewInterface.scss";
@@ -12,9 +13,26 @@ import { Button } from "../components/Button.jsx";
 
 
 
-
-
 export function NewInterface() {
+
+  const [links, setLinks] = useState([])
+  const [newLink, setNewLink] = useState("")
+
+  function handleAddLink() {
+    if (newLink.trim() === "") return;
+    const link = {id: Date.now(), url: newLink}
+
+    setLinks(prevState => [...prevState, link])
+    setNewLink("");
+  }
+
+  function handleRemoveLink(deleted) {
+    setLinks(prevState => prevState.filter(link => link !== deleted))
+  }
+
+
+
+
   return (
     <>
       <div className="newInterface">
@@ -31,8 +49,24 @@ export function NewInterface() {
 
             <Section title="Links Utiles">
 
-              <NoteItem value="https://www.linkedin.com/in/suelen-galhardo-12422931/" title="" />
-              <NoteItem isNew placeholder="nuevo link" />
+             {
+              links.map((link, index)=> (
+                <NoteItem 
+                key={String(index)}
+                value={link}
+                onClick={() => handleRemoveLink(link)}
+                />
+              ))
+             }
+           
+              <NoteItem
+               isNew 
+              placeholder="nuevo link"
+              value={newLink}
+              onChange={e => setNewLink(e.target.value)}
+              onClick={handleAddLink}
+
+               />
 
             </Section>
 
