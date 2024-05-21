@@ -2,6 +2,8 @@ import "../styles/App.scss";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
+
 import "../styles/layout/NewInterface.scss";
 import { Header } from "../components/Header";
 import { Input } from "../components/Input.jsx";
@@ -9,11 +11,14 @@ import { TextArea } from "../components/TextArea.jsx";
 import { NoteItem } from "../components/NoteItem.jsx";
 import { Section } from "../components/Section.jsx";
 import { Button } from "../components/Button.jsx";
+import { api } from "../services/api";
 
 
 
 
 export function NewInterface() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const [links, setLinks] = useState([])
   const [newLink, setNewLink] = useState("")
@@ -21,6 +26,8 @@ export function NewInterface() {
   
   const [tags, setTags] = useState([])
   const [newTag, setNewTag] = useState("")
+
+  const navigate = useNavigate();
 
   function handleAddLink() {
     if (newLink.trim() === "") return;
@@ -45,6 +52,30 @@ function handleRemoveTag(deleted) {
 
 
 }
+async function handleNewNote(){
+
+  if(!title){
+    return alert("Has dejado el titulo sin agregar. Haga clic en agregar o deje el campo en blanco.");
+
+  }
+  if(newLink){
+    return alert(" Has dejado un enlace sin agregar. Haga clic en agregar o deje el campo en blanco.");
+  }
+  if(newTag){
+    return alert(" Has dejado una tag sin agregar. Haga clic en agregar o deje el campo en blanco.");
+  }
+ 
+
+  await api.post("/notes", {
+    title,
+    description,
+    links,
+    tags,
+  });
+  alert("Nota creada");
+  navigate("/");
+
+}
 
 
 
@@ -59,9 +90,17 @@ function handleRemoveTag(deleted) {
               <h1>Crear nota</h1>
               <Link to="/">Volver</Link>
             </header>
-            <Input placeholder="Titulo" />
+            <Input
+             placeholder="Titulo" 
+             onChange={e => setTitle(e.target.value)}
 
-            <TextArea placeholder="bservaciones" />
+             />
+
+            <TextArea
+             placeholder="bservaciones"
+             onChange={e => setDescription(e.target.value)}
+
+              />
 
             <Section title="Links Utiles">
 
@@ -110,7 +149,9 @@ function handleRemoveTag(deleted) {
               </div>
 
             </Section>
-            <Button title="Guardar" />
+            <Button title="Guardar"
+            onClick={handleNewNote}
+             />
 
 
 
