@@ -30,11 +30,11 @@ export function NewInterface() {
   const navigate = useNavigate();
 
   function handleAddLink() {
-    if (newLink.trim() === "") return;
-    const link = {id: Date.now(), url: newLink}
 
-    setLinks(prevState => [...prevState, link])
+    setLinks(prevState => [...prevState, newLink]);
     setNewLink("");
+  
+
   }
 
   function handleRemoveLink(deleted) {

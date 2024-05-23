@@ -1,7 +1,7 @@
 import { FiPlus, FiSearch } from "react-icons/fi";
 import "../styles/layout/Home.scss";
 import "../styles/App.scss";
-
+//import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { api } from "../services/api";
 import { Header } from "../components/Header";
@@ -13,24 +13,30 @@ import { Link } from "react-router-dom";
 
 export function Home() {
 
+  const [search, setSearch] = useState("");
   const [tags, setTags] = useState([]);
   const [tagsSelected, setTagsSelected] = useState([]);
+  const [notes, setNotes] = useState([]);
+
 
   function handleTagSelected(tagName) {
+   
+    if (tagName === "all") {
+      return setTagsSelected([]);
+          
+    } 
     const alreadySelected = tagsSelected.includes(tagName);
+
     if (alreadySelected) {
-     const filteredTags = tagsSelected.filter(tag => tag!== tagName);
-     setTagsSelected(filteredTags);
-    } else {
+      const filteredTags = tagsSelected.filter(tag => tag!== tagName);
+      setTagsSelected(filteredTags);
+    }
+    else {
       setTagsSelected(prevState => [...prevState, tagName]);
     }
 
     //setTagsSelected(prevState => [...prevState, tagName]);
   }
-
-
-
- 
 
 
   useEffect(() => {
@@ -42,6 +48,18 @@ export function Home() {
     fetchTags();
 
   }, []);
+
+  useEffect (() => {
+
+    async function fetchNotes() {
+      const response = await api.get(`/notes?title=${search}&tags=${tagsSelected}`);
+      setNotes(response.data); }
+
+      
+ fetchNotes();
+
+  }, [tagsSelected, search]);
+
 
   return (
     <>
@@ -58,6 +76,8 @@ export function Home() {
             title="Todos" 
          
             onClick={() => handleTagSelected("all")}
+            
+           
             isActive={tagsSelected.length === 0} 
 
           
@@ -80,19 +100,27 @@ export function Home() {
 
       </div>
       <div className="home__search">
-        <Input placeholder="pesquisar pelo titutlo " icon={FiSearch} />
+        <Input 
+        placeholder="pesquisar pelo titutlo " 
+        icon={FiSearch} 
+        onChange = {(e) => setSearch(e.target.value)}
+
+        />
       </div>
       <div className="home__content">
-        <Section title="Minhas notas">
-          <Note
-            data={{
-              title: "React",
-              tags: [
-                { id: "1", name: "react" },
-                { id: "2", name: "Node" },
-              ],
-            }}
+        <Section title="Mis notas">
+          <Link to="/details/$:{note.id}">
+          {
+            notes.map(note => (
+            <Note
+            key={String(note.id)}
+            data={note}
+           // onClick={() => handleDetails(note.id)}
           />
+
+          ))
+          }
+        </Link>
         </Section>
       </div>
 

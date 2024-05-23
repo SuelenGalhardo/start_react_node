@@ -25,9 +25,11 @@ export function Header(){
       
         </Link>
     
+    <Link to="/" className="create__link">
         <div className='logout' onClick={signOut}>
             <RiShutDownLine/>
        </div>
+       </Link>
        </header>
 
 );

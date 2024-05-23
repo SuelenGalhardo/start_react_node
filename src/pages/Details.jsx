@@ -1,5 +1,11 @@
 import "../styles/App.scss";
 import "../styles/layout/Details.scss"
+import { useParams } from "react-router-dom";
+
+import { api } from "../services/api";
+
+import { useState, useEffect } from "react";
+
 import { Header } from "../components/Header";
 import { Button } from "../components/Button";
 import { Section } from "../components/Section";
@@ -7,47 +13,75 @@ import { ButtonText } from "../components/ButtonText";
 import { Tag } from "../components/Tag";
 
 export function Details() {
+
+  const [data, setData] = useState(null);
+
+  const params = useParams();
+
+
+
+
+  useEffect(() => {
+
+    async function fetchNote(){
+      const response = await api.get(`/notes/${params.id}`)
+      setData(response.data)
+    }
+
+    fetchNote();
+
+  }, [])
+
+
   return (
     <>
       <div className="container">
         <Header />
+
+      { data &&
         <main className="mainContainer">
           <div className="contentOne">
             <ButtonText title="Excluir nota" />
-            <h1 className="contentOne__title">Introduction in react</h1>
-            <p className="contentOne__text">Lorem ipsum dolor sit amet consectetur 
-              adipisicing elit. Iste sed deleniti ipsa 
-              recusandae autem pariatur quaerat magnam, 
-              quod consectetur sint, optio ratione, 
-              exercitationem illo fugiat? Sapiente
-               exercitationem pariatur quae voluptatum. 
-                exercitationem illo fugiat? Sapiente
-               exercitationem pariatur quae voluptatum.</p>
-               
+            <h1 className="contentOne__title">{data.title}</h1>
+            <p className="contentOne__text">{data.description}</p>
 
 
+                
+
+            { data.links &&
             <Section title="Enlaces útiles">
               <ul className="links">
-                <li>
-                  <a href="#">Link 1</a>
+                {
+                  data.links.map(link => (
+                <li key={String(link.id)}>
+                  <a href={link.url}>{link.url}</a>
                 </li>
-                <li>
-                  <a href="#">Link 2</a>
-                </li>
-                <li>
-                  <a href="#">Link 3</a>
-                </li>
+                ))
+                }
+               
               </ul>
             </Section>
+            }
 
+
+
+            {data.tags &&
             <Section title="Marcadores">
-              <Tag title="Express" />
-              <Tag title="Node" />
+              {data.tags.map(tag => (
+
+              <Tag
+              key={String(tag.id)}
+               title={tag.name} />
+
+            ))}
+             
             </Section>
+            }
 
             <Button title="Volver" />
           </div>
         </main>
+        }
       </div>
     </>
   );
