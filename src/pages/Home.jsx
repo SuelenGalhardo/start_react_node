@@ -109,7 +109,7 @@ export function Home() {
       </div>
       <div className="home__content">
         <Section title="Mis notas">
-          <Link to="/details/$:{note.id}">
+          <Link to="/details/.id">
           {
             notes.map(note => (
             <Note
