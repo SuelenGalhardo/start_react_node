@@ -3,6 +3,8 @@ import "../styles/layout/Profile.scss";
 import {useState } from 'react'
 import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 
+import { ButtonText } from "../components/ButtonText";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/auth";
 
@@ -28,6 +30,12 @@ export function Profile() {
 
   const [avatar, setAvatar] = useState(avatarUrl);
   const [avatarFile, setAvatarFile] = useState(null);
+  const navigate = useNavigate();
+
+  function  handleBack() {
+    navigate(-1);
+  }
+
 
   async function handleUpdate(e) {
     e.preventDefault();
@@ -62,9 +70,10 @@ function handleChangeAvatar(e) {
       <div className="profile">
         <div className="profile__headerProfile">
           <header>
-            <Link to="/">
+            <ButtonText title="Volver"
+             onClick={handleBack}>
               <FiArrowLeft />
-            </Link>
+            </ButtonText>
           </header>
         </div>
 

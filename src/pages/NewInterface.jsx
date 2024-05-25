@@ -1,6 +1,5 @@
 import "../styles/App.scss";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 
@@ -10,6 +9,7 @@ import { Input } from "../components/Input.jsx";
 import { TextArea } from "../components/TextArea.jsx";
 import { NoteItem } from "../components/NoteItem.jsx";
 import { Section } from "../components/Section.jsx";
+import { ButtonText } from "../components/ButtonText.jsx";
 import { Button } from "../components/Button.jsx";
 import { api } from "../services/api";
 
@@ -28,6 +28,10 @@ export function NewInterface() {
   const [newTag, setNewTag] = useState("")
 
   const navigate = useNavigate();
+
+  function  handleBack() {
+    navigate(-1);
+  }
 
   function handleAddLink() {
 
@@ -73,11 +77,9 @@ async function handleNewNote(){
     tags,
   });
   alert("Nota creada");
-  navigate("/");
+  navigate(-1);
 
 }
-
-
 
 
   return (
@@ -88,7 +90,9 @@ async function handleNewNote(){
           <form className="newInterface__formNew">
             <header className="newInterface__headerNew">
               <h1>Crear nota</h1>
-              <Link to="/">Volver</Link>
+              <ButtonText title="Volver"
+              onClick={handleBack}
+               />
             </header>
             <Input
              placeholder="Titulo" 
