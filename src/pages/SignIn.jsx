@@ -17,6 +17,8 @@ export function SignIn() {
 
 
   const { signIn } = useAuth(); 
+
+
 function handleSignIn() {
   signIn({email, password })
 }
@@ -38,7 +40,7 @@ function handleSignIn() {
 
         <Button title="Entrar" onClick={handleSignIn} />
         <Link to="/register" className="signIn__createCont">
-          Criar conta
+          Crear conta
         </Link>
       </form>
 
