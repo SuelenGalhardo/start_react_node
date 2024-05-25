@@ -5,7 +5,7 @@ import { FiArrowLeft, FiUser, FiMail, FiLock, FiCamera } from "react-icons/fi";
 
 import { ButtonText } from "../components/ButtonText";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+
 import { useAuth } from "../hooks/auth";
 
 
