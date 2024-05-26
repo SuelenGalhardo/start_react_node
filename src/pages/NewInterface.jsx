@@ -1,10 +1,11 @@
 import "../styles/App.scss";
+import "../styles/layout/NewInterface.scss";
 import { useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import "../styles/layout/NewInterface.scss";
-import { Header } from "../components/Header";
+
+import { Header } from "../components/Header.jsx";
 import { Input } from "../components/Input.jsx";
 import { TextArea } from "../components/TextArea.jsx";
 import { NoteItem } from "../components/NoteItem.jsx";
