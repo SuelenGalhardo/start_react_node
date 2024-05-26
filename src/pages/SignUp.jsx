@@ -15,8 +15,7 @@ export function SignUp() {
   const navigate = useNavigate();
 
   function handleSignUp(){
-    //console.log(name, email, password);
-    // (name === "" || email === "" || password === "") return para function parar aqui 
+
     if(!name ||!email ||!password ){
      return alert("Todos los campos son obligatorios");
   }
