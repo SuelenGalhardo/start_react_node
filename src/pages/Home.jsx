@@ -109,18 +109,18 @@ export function Home() {
       </div>
       <div className="home__content">
         <Section title="Mis notas">
-          <Link to="/details/.id">
-          {
-            notes.map(note => (
+          {notes.map(note => (
+          <Link key={String(note.id)} to={`/details/${note.id}`}>
+          
+          
             <Note
-            key={String(note.id)}
             data={note}
-           // onClick={() => handleDetails(note.id)}
+        
           />
 
-          ))
-          }
+       
         </Link>
+        ))}
         </Section>
       </div>
 

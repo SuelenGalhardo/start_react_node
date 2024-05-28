@@ -1,4 +1,4 @@
-//import React from 'react';
+
 export function Button({title, loading = false, ...rest }){
 
     return(

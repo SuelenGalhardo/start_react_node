@@ -7,7 +7,7 @@ export function Routes() {
   const { user } = useAuth();
   return (
 
-    //if ternario user es true, renderiza AppRoutes, sino renderiza AuthRoutes
+
 
     <BrowserRouter>
       { user ? <AppRoutes /> : <AuthRoutes />}
