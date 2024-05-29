@@ -100,7 +100,7 @@ export function Home() {
       </div>
       <div className="home__search">
         <Input 
-        placeholder="pesquisar pelo titutlo " 
+        placeholder="Buscar por título " type="text"
         icon={FiSearch} 
         onChange = {(e) => setSearch(e.target.value)}
 

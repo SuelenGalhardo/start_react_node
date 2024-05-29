@@ -19,7 +19,7 @@ export function Header(){
           src={avatarUrl}
           alt={user.name}/>
         <div className="create__name">
-          <span className="create__span">Bem-vindo</span>
+          <span className="create__span">Bienvenido</span>
           <strong className="create__strong">{user.name}</strong>
         
         
