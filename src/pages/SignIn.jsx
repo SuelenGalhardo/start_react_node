@@ -59,7 +59,7 @@ function toggleShowPassword() {
         
         <Button title="Entrar" onClick={handleSignIn} />
         <Link to="/register" className="signIn__createCont">
-          Crear conta
+          Crear cuenta
         </Link>
       </form>
 
