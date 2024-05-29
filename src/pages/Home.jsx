@@ -1,7 +1,6 @@
 import { FiPlus, FiSearch } from "react-icons/fi";
 import "../styles/layout/Home.scss";
 import "../styles/App.scss";
-//import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { api } from "../services/api";
 import { Header } from "../components/Header";
@@ -35,7 +34,7 @@ export function Home() {
       setTagsSelected(prevState => [...prevState, tagName]);
     }
 
-    //setTagsSelected(prevState => [...prevState, tagName]);
+
   }
 
 
