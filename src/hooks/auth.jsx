@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { api } from "../services/api";
+
 export const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
@@ -7,8 +8,9 @@ function AuthProvider({ children }) {
 
     async function signIn({ email, password}) {
 
-        try { const response = await api.post("/sessions", { email, password });
-        const { user, token } = response.data;
+        try { 
+            const response = await api.post("/sessions", { email, password });
+            const { user, token } = response.data;
 
         localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
         localStorage.setItem("@rocketnotes:token", token);
@@ -19,12 +21,12 @@ function AuthProvider({ children }) {
         setData({ user, token });
 
 
-        //console.log(user, token );
+        
     } catch (error) {
         if (error.response){
-            alert(error.response.data.error);
+            throw new Error (error.response.data.error);
         }else{
-            alert("Ocurrio un error");
+            throw new Error ("Ocurrio un error");
         }
 
        
@@ -34,8 +36,8 @@ function AuthProvider({ children }) {
 function signOut() {
     
     localStorage.removeItem("@rocketnotes:token");
-  localStorage.removeItem("@rocketnotes:user");
-  setData({ });
+    localStorage.removeItem("@rocketnotes:user");
+    setData({ });
 
   }
 
