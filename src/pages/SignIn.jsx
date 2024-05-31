@@ -62,15 +62,17 @@ function toggleShowPassword() {
         icon={FiLock} 
         onChange={e => setPassword(e.target.value)}
         value={password}/>
+
+<button type="button" className="password-toggle" onClick={toggleShowPassword}>
+              {showPassword ? <FiEyeOff /> : <FiEye />}
+        </button>
+
            </div>
            
 
            {error && <div className="error-message">{error}</div>}
 
-        <button type="button" className="password-toggle" onClick={toggleShowPassword}>
-              {showPassword ? <FiEyeOff /> : <FiEye />}
-            </button>
-
+      
 
      
         
