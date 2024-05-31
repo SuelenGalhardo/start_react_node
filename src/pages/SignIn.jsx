@@ -14,6 +14,9 @@ import { FiMail, FiLock, FiEye, FiEyeOff} from "react-icons/fi";
 export function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+
+  
   const [showPassword, setShowPassword] = useState(false);
 
 
@@ -41,14 +44,20 @@ function toggleShowPassword() {
 
         <h2 className="signIn__titleTwo"> Inicie sesión </h2>
 
-        <Input placeholder="E-mail" type="text" icon={FiMail} onChange={e => setEmail(e.target.value)} />
+        <div className={`inputOne ${email? 'filled' : ''}`}>
 
-        <div className=" inputOne password-input">
+        <Input placeholder="E-mail" type="text" icon={FiMail} 
+        onChange={e => setEmail(e.target.value)}
+        value={email} />
+        </div>
+
+        <div className={`inputOne password-input ${password ? 'filled' : ''}`}>
         <Input 
         placeholder="password" 
         type={showPassword ? "text" : "password"}
         icon={FiLock} 
-        onChange={e => setPassword(e.target.value)} />
+        onChange={e => setPassword(e.target.value)}
+        value={password}/>
 
         <button type="button" className="password-toggle" onClick={toggleShowPassword}>
               {showPassword ? <FiEyeOff /> : <FiEye />}

@@ -5,6 +5,8 @@
   background-color: $color-background-900;
   margin-bottom: 8px;
   border-radius: 10px;
+  border: 2px solid transparent; 
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
  
 }
 
@@ -15,6 +17,7 @@
   color: $color-white;
   background: transparent;
   border: 0;
+
 }
 
 .inputOne input::placeholder {
@@ -26,3 +29,4 @@
   margin-left: 16px;
   color: $color-gray-300;
 }
+
